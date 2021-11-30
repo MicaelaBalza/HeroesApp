@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "hooks/useForm";
 
 import { getHeroesByName } from "utils/heroes";
-import HeroCard from "../heroes/HeroCard/HeroCard";
+import HeroCard from "components/HeroCard";
 
-import './SearchScreen.css';
+import './index.css';
 
 interface HeroFormData {
   hero: string;

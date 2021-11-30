@@ -1,7 +1,7 @@
 import MarvelScreen from 'screens/Marvel';
 import DcScreen from 'screens/Dc';
 import HeroScreen from 'screens/HeroDetail';
-import SearchScreen from 'components/search/SearchScreen';
+import SearchScreen from 'screens/Search';
 
 export const routes = {
   private: [

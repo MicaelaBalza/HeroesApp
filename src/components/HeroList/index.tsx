@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { getHeroesByPublisher } from 'utils/heroes';
 import { Publisher } from 'types';
-import HeroCard from '../HeroCard/HeroCard';
+import HeroCard from 'components/HeroCard';
 
 import './index.css';
 

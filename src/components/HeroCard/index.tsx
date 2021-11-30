@@ -14,7 +14,7 @@ interface Props {
 const HeroCard = ({ id, superhero, alter_ego, first_appearance, characters }: Props) => {
   return (
     <div className="hero-card">
-      <img src={require(`../../../assets/img/heroes/${id}.jpg`).default} alt={superhero} className="hero-img" />
+      <img src={require(`../../assets/img/heroes/${id}.jpg`).default} alt={superhero} className="hero-img" />
       <p className="superhero">{superhero}</p>
       {alter_ego !== characters && <p>{alter_ego}</p>}
       <div className="info-item">
