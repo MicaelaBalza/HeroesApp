@@ -1,0 +1,43 @@
+.hero-card {
+  max-width: 264px;
+  min-height: 300px;
+  padding: 20px;
+  border: 1px solid var(--glow-magenta-dark);
+  box-shadow: 0 0 15px var(--glow-magenta-dark), 0 0 5px var(--glow-magenta), 0 0 5px var(--black);
+  background-color: var(--bg-violet);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-img {
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.info-item {
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info {
+  color: var(--white);
+}
+
+.superhero {
+  color: var(--orange);
+  top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  border-bottom: 1px solid var(--glow-magenta-dark);
+  padding-bottom: 10px;
+}
+
+.more-button {
+  color: var(--orange);
+}

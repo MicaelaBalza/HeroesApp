@@ -1,0 +1,50 @@
+.navbar {
+  background-color: var(--bg-violet);
+  color: var(--white);
+  display: flex;
+  padding: 25px 50px;
+  box-shadow: 0 5px 10px var(--bg-violet-shadow);
+}
+
+.navbar-logo {
+  font-size: 24px;
+  color: var(--orange);
+  text-shadow: 0 0 15px var(--glow-magenta-dark), 0 0 5px var(--glow-magenta), 0 0 5px var(--black);
+  margin-right: 50px;
+}
+
+.navbar-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+}
+
+.menu-left {
+  display: flex;
+}
+
+.menu-left > * + * {
+  margin-left: 30px;
+}
+
+.menu-link:not(.active):hover {
+  text-shadow: 0 0 10px var(--white);
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 24px;
+}
+
+.active {
+  color: var(--white);
+}

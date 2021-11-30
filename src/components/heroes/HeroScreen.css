@@ -1,0 +1,14 @@
+.hero-container {
+  padding: 20px;
+  border: 1px solid var(--glow-magenta-dark);
+  box-shadow: 0 0 15px var(--glow-magenta-dark), 0 0 5px var(--glow-magenta), 0 0 5px var(--black);
+  background-color: var(--bg-violet);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.hero-img {
+  width: 250px;
+  margin-right: 20px;
+}
