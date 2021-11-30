@@ -1,3 +1,8 @@
+export type User = {
+  name?: string;
+  logged: boolean;
+}
+
 export type Publisher = "DC Comics" | "Marvel Comics";
 
 export interface Hero {

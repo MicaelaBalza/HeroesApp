@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import AuthContext from '../../auth/AuthContext';
+import AuthContext from '../../contexts/AuthContext';
 
-import { ActionTypes } from '../../auth/authReducer';
+import { ActionTypes } from 'contexts/AuthContext/reducer';
 
-import './LoginScreen.css';
+import './index.css';
 
-const LoginScreen = () => {
+const Login = () => {
   const history = useHistory();
   const { dispatch } = useContext(AuthContext);
   const lastPath = localStorage.getItem('lastPath') || '/';
@@ -25,4 +25,4 @@ const LoginScreen = () => {
   )
 }
 
-export default LoginScreen
+export default Login;

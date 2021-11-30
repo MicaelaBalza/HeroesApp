@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { getHeroesByPublisher } from '../../../selectors/getHeroesByPublisher';
-import { Publisher } from '../../../utils/types';
+import { getHeroesByPublisher } from 'utils/heroes';
+import { Publisher } from 'types';
 import HeroCard from '../HeroCard/HeroCard';
 
-import './HeroList.css';
+import './index.css';
 
 interface Props {
   publisher: Publisher

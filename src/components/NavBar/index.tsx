@@ -1,12 +1,12 @@
-import { useContext } from 'react'
-import { Link, NavLink, useHistory } from 'react-router-dom'
+import { useContext } from 'react';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 
-import AuthContext from '../../auth/AuthContext'
-import { ActionTypes } from '../../auth/authReducer'
+import AuthContext from 'contexts/AuthContext';
+import { ActionTypes } from 'contexts/AuthContext/reducer';
 
-import { navLinks } from './constants'
+import { navLinks } from './constants';
 
-import './NavBar.css'
+import './index.css';
 
 const Navbar = () => {
   const history = useHistory();

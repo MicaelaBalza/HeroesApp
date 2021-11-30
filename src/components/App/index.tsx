@@ -1,7 +1,7 @@
 import { useReducer, useEffect } from 'react';
-import AuthContext from './auth/AuthContext';
-import AppRouter from "./routers/AppRouter";
-import { authReducer } from "./auth/authReducer";
+import AuthContext from 'contexts/AuthContext';
+import AppRouter from "components/Router";
+import { authReducer } from "contexts/AuthContext/reducer";
 
 const init = () => {
   const value = localStorage.getItem('user');

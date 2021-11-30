@@ -7,11 +7,12 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es6"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -25,6 +26,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/**/*"
+    "src"
   ]
 }

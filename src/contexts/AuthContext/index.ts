@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-import { User } from "../types/types";
+import { User } from 'types';
 
 const initialState: User = {
   name: "",

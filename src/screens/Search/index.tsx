@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import { useForm } from "src/hooks/useForm";
+import { useForm } from "hooks/useForm";
 
-import { getHeroesByName } from "src/selectors/getHeroesByName";
+import { getHeroesByName } from "utils/heroes";
 import HeroCard from "../heroes/HeroCard/HeroCard";
 
 import './SearchScreen.css';

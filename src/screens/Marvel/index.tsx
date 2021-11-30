@@ -1,4 +1,4 @@
-import HeroList from '../heroes/HeroList/HeroList';
+import HeroList from 'components/heroes/HeroList/HeroList';
 
 const MarvelScreen = () => {
   return (

@@ -1,7 +1,7 @@
-import MarvelScreen from '../components/marvel/MarvelScreen';
-import DcScreen from '../components/dc/DcScreen';
-import HeroScreen from '../components/heroes/HeroScreen';
-import SearchScreen from '../components/search/SearchScreen';
+import MarvelScreen from 'screens/Marvel';
+import DcScreen from 'screens/Dc';
+import HeroScreen from 'screens/HeroDetail';
+import SearchScreen from 'components/search/SearchScreen';
 
 export const routes = {
   private: [

@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { useParams, Redirect, useHistory } from "react-router-dom";
 
-import { getHeroById } from "src/selectors/getHeroById";
+import { getHeroById } from "utils/heroes";
 
-import './HeroScreen.css';
+import './index.css';
 
 interface HeroScreenParams {
   heroId: string;
@@ -31,7 +31,7 @@ const HeroScreen = () => {
   return (
     <div className="hero-container">
       <img
-        src={`../assets/heroes/${heroId}.jpg`}
+        src={require(`../../assets/img/heroes/${heroId}.jpg`).default}
         alt={superhero}
         className="hero-img animate__animated animate__slideInLeft"
       />
