@@ -16,7 +16,7 @@ const Navbar = () => {
     dispatch({ type: ActionTypes.logout });
     localStorage.removeItem('user');
     history.push('/login');
-  }
+  };
 
   return (
     <nav className="navbar">
@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

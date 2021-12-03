@@ -22,7 +22,7 @@ const HeroList = ({ publisher }: Props) => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default HeroList;

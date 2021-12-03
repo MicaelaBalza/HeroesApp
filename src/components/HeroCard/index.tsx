@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { Link } from 'react-router-dom';
 
 import './index.css';
@@ -27,7 +28,7 @@ const HeroCard = ({ id, superhero, alter_ego, first_appearance, characters }: Pr
       </div>
       <Link to={`/hero/${id}`} className="more-button">+ Ver más</Link>
     </div>
-  )
-}
+  );
+};
 
-export default HeroCard
+export default HeroCard;

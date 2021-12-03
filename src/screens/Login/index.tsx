@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = () => {
     dispatch({ type: ActionTypes.login, payload: { name: 'Fernando' } });
     history.replace(lastPath);
-  }
+  };
 
   return (
     <div className="login-container">
@@ -22,7 +22,7 @@ const Login = () => {
         Login
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

@@ -1,9 +1,9 @@
-import { useMemo } from "react";
-import { useHistory } from "react-router-dom";
-import { useForm } from "hooks/useForm";
+import { useMemo } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useForm } from 'hooks/useForm';
 
-import { getHeroesByName } from "utils/heroes";
-import HeroCard from "components/HeroCard";
+import { getHeroesByName } from 'utils/heroes';
+import HeroCard from 'components/HeroCard';
 
 import './index.css';
 
@@ -23,7 +23,7 @@ const SearchScreen = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     history.push(`?q=${hero}`);
-  }
+  };
 
   return (
     <div className="search-container">
@@ -53,7 +53,7 @@ const SearchScreen = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SearchScreen;

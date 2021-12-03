@@ -17,7 +17,7 @@ const PublicRoute = ({ isAuthenticated, component: Component, ...rest}: Props & 
         )
       )}
     />
-  )
-}
+  );
+};
 
 export default PublicRoute;

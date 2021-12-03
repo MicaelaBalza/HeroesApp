@@ -3,32 +3,42 @@ import DcScreen from 'screens/Dc';
 import HeroScreen from 'screens/HeroDetail';
 import SearchScreen from 'screens/Search';
 
-export const routes = {
+export const PATHS = {
+  home: '/marvel',
+  marvel: '/marvel',
+  dc: '/dc',
+  hero: '/hero/:id',
+  search: '/search',
+  login: '/login',
+  register: '/register'
+};
+
+export const ROUTES = {
   private: [
     {
-      path: '/marvel',
+      path: PATHS.marvel,
       component: MarvelScreen,
     },
     {
-      path: '/dc',
+      path: PATHS.dc,
       component: DcScreen,
     },
     {
-      path: '/hero/:heroId',
+      path: PATHS.hero,
       component: HeroScreen,
     },
     {
-      path: '/search',
+      path: PATHS.search,
       component: SearchScreen,
     }
   ],
   public: [
     {
-      path: '/login',
+      path: PATHS.login,
       name: 'login',
     },
     {
-      path: '/register',
+      path: PATHS.register,
       name: 'register',
     },
   ]

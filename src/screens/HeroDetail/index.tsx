@@ -1,7 +1,8 @@
-import { useMemo } from "react";
-import { useParams, Redirect, useHistory } from "react-router-dom";
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { useMemo } from 'react';
+import { useParams, Redirect, useHistory } from 'react-router-dom';
 
-import { getHeroById } from "utils/heroes";
+import { getHeroById } from 'utils/heroes';
 
 import './index.css';
 
@@ -50,7 +51,7 @@ const HeroScreen = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HeroScreen;
