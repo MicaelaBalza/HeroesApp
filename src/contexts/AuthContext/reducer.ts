@@ -1,29 +1,29 @@
 import { User } from 'types';
 
 export enum ActionTypes {
-  login = '[Auth] Login',
-  logout = '[Auth] Logout'
+  Login = '[Auth] Login',
+  Logout = '[Auth] Logout'
 }
 
 interface Login {
-  type: ActionTypes.login;
+  type: ActionTypes.Login;
   payload: Record<string, unknown>;
 }
 
 interface Logout {
-  type: ActionTypes.logout;
+  type: ActionTypes.Logout;
 }
 
 export type Action = Login | Logout;
 
 export const authReducer = (state: User, action: Action) => {
   switch (action.type) {
-  case ActionTypes.login:
+  case ActionTypes.Login:
     return {
       ...action.payload,
       logged: true
     };
-  case ActionTypes.logout:
+  case ActionTypes.Logout:
     return {
       logged: false
     };

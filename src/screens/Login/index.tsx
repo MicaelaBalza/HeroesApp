@@ -11,7 +11,7 @@ const Login = () => {
   const { dispatch } = useContext(AuthContext);
   const lastPath = localStorage.getItem('lastPath') || '/';
   const handleLogin = () => {
-    dispatch({ type: ActionTypes.login, payload: { name: 'Fernando' } });
+    dispatch({ type: ActionTypes.Login, payload: { name: 'Fernando' } });
     history.replace(lastPath);
   };
 

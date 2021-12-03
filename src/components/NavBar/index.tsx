@@ -13,7 +13,7 @@ const Navbar = () => {
   const { user, dispatch } = useContext(AuthContext);
 
   const handleLogout = () => {
-    dispatch({ type: ActionTypes.logout });
+    dispatch({ type: ActionTypes.Logout });
     localStorage.removeItem('user');
     history.push('/login');
   };

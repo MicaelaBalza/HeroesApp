@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Link } from 'react-router-dom';
 
 import './index.css';
