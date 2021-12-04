@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { useMemo } from 'react';
 import { useParams, Redirect, useHistory } from 'react-router-dom';
 

@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import NavBar from '.';
 
-import { navLinks } from './constants';
+import { NAV_LINKS } from './constants';
 
 describe('NavBar Component', () => {
   const history = createMemoryHistory();
@@ -20,7 +20,7 @@ describe('NavBar Component', () => {
 
   it('should render correctly', () => {
     expect(screen.getByText('Heroes App')).toBeInTheDocument();
-    expect(screen.getByText(navLinks[0].name)).toBeInTheDocument();
+    expect(screen.getByText(NAV_LINKS[0].name)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Logout'})).toBeInTheDocument();
   });
 

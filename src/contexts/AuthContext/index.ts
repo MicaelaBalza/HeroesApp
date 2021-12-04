@@ -5,7 +5,7 @@ import { Action } from 'contexts/AuthContext/reducer';
 
 const initialState: User = {
   name: '',
-  logged: false,
+  isLogged: false,
 };
 
 const AuthContext = createContext<{user: User, dispatch: React.Dispatch<Action>}>({

@@ -4,7 +4,7 @@ import { Link, NavLink, useHistory } from 'react-router-dom';
 import AuthContext from 'contexts/AuthContext';
 import { ActionTypes } from 'contexts/AuthContext/reducer';
 
-import { navLinks } from './constants';
+import { NAV_LINKS } from './constants';
 
 import './index.css';
 
@@ -25,7 +25,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-menu">
         <div className="menu-left">
-          {navLinks.map(navLink => (
+          {NAV_LINKS.map(navLink => (
             <NavLink
               key={navLink.name}
               to={navLink.path}

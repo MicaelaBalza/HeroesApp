@@ -1,14 +1,14 @@
 import { Hero, Publisher } from '../types';
-import { heroes } from '../data/heroes';
+import { HEROES } from '../data/heroes';
 
 export const getHeroById = (id: string): Hero | undefined => {
-  return heroes.find(hero => hero.id === id);
+  return HEROES.find(hero => hero.id === id);
 };
 
 export const getHeroesByName = (name: string) => {
-  return name !== '' ? heroes.filter(hero => hero.superhero.toLocaleLowerCase().includes(name.toLocaleLowerCase())) : [];
+  return name !== '' ? HEROES.filter(hero => hero.superhero.toLocaleLowerCase().includes(name.toLocaleLowerCase())) : [];
 };
 
 export const getHeroesByPublisher = (publisher: Publisher): Hero[] => {
-  return heroes.filter(hero => hero.publisher === publisher);
+  return HEROES.filter(hero => hero.publisher === publisher);
 };

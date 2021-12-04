@@ -21,11 +21,11 @@ export const authReducer = (state: User, action: Action) => {
   case ActionTypes.Login:
     return {
       ...action.payload,
-      logged: true
+      isLogged: true
     };
   case ActionTypes.Logout:
     return {
-      logged: false
+      isLogged: false
     };
   default:
     return state;

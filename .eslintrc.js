@@ -7,6 +7,7 @@ module.exports = {
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended'
   ],
   'parser': '@typescript-eslint/parser',
@@ -15,11 +16,13 @@ module.exports = {
       'jsx': true
     },
     'ecmaVersion': 12,
-    'sourceType': 'module'
+    'sourceType': 'module',
+    'project': ['./tsconfig.json']
   },
   'plugins': [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'unused-imports'
   ],
   'rules': {
     'indent': ['error', 2, { 'ignoredNodes': ['TemplateLiteral *'] }],
@@ -35,6 +38,26 @@ module.exports = {
       'error',
       'always'
     ],
-    'react/react-in-jsx-scope': 'off'
+    'unused-imports/no-unused-imports': 'error',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        "selector": "variable",
+        "types": ["boolean", "number", "string", "array"],
+        "modifiers": ["const", "exported"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        'selector': 'variable',
+        'types': ['boolean'],
+        'format': ['camelCase'],
+        'prefix': ['is', 'should', 'has', 'can', 'did', 'will']
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"]
+      }
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off'
   }
 };

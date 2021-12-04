@@ -8,7 +8,7 @@ const init = () => {
   if (typeof value === 'string') {
     return JSON.parse(value);
   }
-  return { logged: false };
+  return { isLogged: false };
 };
 
 const HeroesApp = function () {

@@ -1,6 +1,6 @@
 export type User = {
   name?: string;
-  logged: boolean;
+  isLogged: boolean;
 }
 
 export enum Publisher {

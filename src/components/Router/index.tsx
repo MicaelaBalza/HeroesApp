@@ -8,14 +8,14 @@ import PrivateRoute from 'components/Router/components/PrivateRoute';
 import DashboardRoutes from 'components/Router/components/DashboardRoutes';
 
 const AppRouter = () => {
-  const { user: { logged } } = useContext(AuthContext);
+  const { user: { isLogged } } = useContext(AuthContext);
 
   return (
     <Router>
       <div>
         <Switch>
-          <PublicRoute path="/login" component={Login} isAuthenticated={logged} />
-          <PrivateRoute path="/" component={DashboardRoutes} isAuthenticated={logged} />
+          <PublicRoute path="/login" component={Login} isAuthenticated={isLogged} />
+          <PrivateRoute path="/" component={DashboardRoutes} isAuthenticated={isLogged} />
         </Switch>
       </div>
     </Router>

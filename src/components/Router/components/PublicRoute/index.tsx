@@ -1,4 +1,4 @@
-import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { Route, Redirect, RouteProps, RouteComponentProps } from 'react-router-dom';
 
 interface Props {
   isAuthenticated: boolean;
@@ -9,7 +9,7 @@ const PublicRoute = ({ isAuthenticated, component: Component, ...rest}: Props & 
 
   return (
     <Route {...rest}
-      component={(props: any) => (
+      component={(props: RouteComponentProps) => (
         !isAuthenticated ? (
           <Component {...props} />
         ) : (

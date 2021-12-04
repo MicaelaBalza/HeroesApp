@@ -1,6 +1,6 @@
 import { Hero, Publisher } from 'types';
 
-export const heroes: Hero[] = [
+export const HEROES: Hero[] = [
   {
     'id': 'dc-batman',
     'superhero':'Batman', 
