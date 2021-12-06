@@ -1,21 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import NavBar from '.';
-
+import { renderWithRouter } from 'utils/tests';
 import { NAV_LINKS } from './constants';
+
+import NavBar from '.';
 
 describe('NavBar Component', () => {
   const history = createMemoryHistory();
 
   beforeEach(() => {
-    render(
-      <Router history={history}>
-        <NavBar />
-      </Router>
-    );
+    renderWithRouter(NavBar, history);
   });
 
   it('should render correctly', () => {
@@ -26,7 +22,6 @@ describe('NavBar Component', () => {
 
   it('should navigate to login when clicking logout', () => {
     const logoutButton = screen.getByRole('button', { name: 'Logout'});
-    expect(logoutButton).toBeInTheDocument();
     userEvent.click(logoutButton);
     expect(history.location.pathname).toBe('/login');
   });
