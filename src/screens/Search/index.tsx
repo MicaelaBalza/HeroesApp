@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useForm } from 'hooks/useForm';
+import { useNavigate, useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 
+import { useForm } from 'hooks/useForm';
 import { getHeroesByName } from 'utils/heroes';
+
 import HeroCard from 'components/HeroCard';
 
 import './index.css';
@@ -12,17 +14,17 @@ interface HeroFormData {
 }
 
 const SearchScreen = () => {
-  const history = useHistory();
-  const query = history.location.search.slice(3);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { q = ''} = queryString.parse(location.search);
   const [values, handleInputChange] = useForm<HeroFormData>({
-    hero: query
+    hero: ''
   });
   const { hero } = values;
-  const heroesFiltered = useMemo(() => getHeroesByName(query), [query]);
-
+  const heroesFiltered = useMemo(() => getHeroesByName(q as string), [q]);
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    history.push(`?q=${hero}`);
+    navigate(`?q=${hero}`);
   };
 
   return (
@@ -41,8 +43,10 @@ const SearchScreen = () => {
         </button>
       </form>
       <div>
-        { query === '' && <p className="empty-message">Start typing to search for your hero</p> }
-        {(query !== '' && heroesFiltered.length === 0) && <p>No heroes match {query}</p>}
+        {q === ''
+          ? <p className="empty-message">Start typing to search for your hero</p>
+          : (heroesFiltered.length === 0) && <p>No heroes match {q}</p>
+        }
         <div className="hero-grid">
           {heroesFiltered.length > 0 && heroesFiltered.map((hero) => (
             <HeroCard

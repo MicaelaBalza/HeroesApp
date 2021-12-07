@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import AuthContext from 'contexts/AuthContext';
 import { ActionTypes } from 'contexts/AuthContext/reducer';
@@ -9,13 +9,13 @@ import { NAV_LINKS } from './constants';
 import './index.css';
 
 const Navbar = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
 
   const handleLogout = () => {
     dispatch({ type: ActionTypes.Logout });
     localStorage.removeItem('user');
-    history.push('/login');
+    navigate('/login', { replace: true });
   };
 
   return (
@@ -27,11 +27,9 @@ const Navbar = () => {
         <div className="menu-left">
           {NAV_LINKS.map(navLink => (
             <NavLink
-              key={navLink.name}
               to={navLink.path}
-              exact
-              className="menu-link"
-              activeClassName="active"
+              key={navLink.name}
+              className={ ({ isActive }) => 'menu-link' + (isActive && ' active') }
             >
               {navLink.name}
             </NavLink>

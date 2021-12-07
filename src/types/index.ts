@@ -16,3 +16,7 @@ export interface Hero {
   first_appearance: string,
   characters: string
 }
+
+export interface PropsWithChildren {
+  children: JSX.Element;
+}

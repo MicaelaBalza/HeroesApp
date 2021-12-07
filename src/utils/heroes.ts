@@ -1,5 +1,5 @@
-import { Hero, Publisher } from '../types';
 import { HEROES } from '../data/heroes';
+import { Hero, Publisher } from '../types';
 
 export const getHeroById = (id: string): Hero | undefined => {
   return HEROES.find(hero => hero.id === id);

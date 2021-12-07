@@ -1,6 +1,7 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import NavBar from 'components/NavBar';
+import MarvelScreen from 'screens/Marvel';
 
 import { ROUTES } from '../../constants';
 
@@ -9,14 +10,12 @@ const DashboardRoutes = () => {
     <>
       <NavBar />
       <div className="page-container">
-        <Switch>
+        <Routes>
           {ROUTES.private.map(({ path, component: Component}) => (
-            <Route exact path={path} key={path}>
-              <Component />
-            </Route>
+            <Route path={path} key={path} element={<Component />} />
           ))}
-          <Redirect to="/marvel" />
-        </Switch>
+          <Route path="/" element={<MarvelScreen />} />
+        </Routes>
       </div>
     </>
   );

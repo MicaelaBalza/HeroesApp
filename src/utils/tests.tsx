@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { MemoryHistory } from 'history';
 
 export const renderWithRouter = (
@@ -8,7 +8,7 @@ export const renderWithRouter = (
   props?: any
 ) => {
   return render(
-    <Router history={history}>
+    <Router>
       <Component {...props} />
     </Router>
   );

@@ -4,13 +4,13 @@ import HeroScreen from 'screens/HeroDetail';
 import SearchScreen from 'screens/Search';
 
 export const PATHS = {
-  home: '/marvel',
-  marvel: '/marvel',
-  dc: '/dc',
-  hero: '/hero/:id',
-  search: '/search',
-  login: '/login',
-  register: '/register'
+  home: 'marvel',
+  marvel: 'marvel',
+  dc: 'dc',
+  hero: 'hero/:id',
+  search: 'search',
+  login: 'login',
+  register: 'register'
 };
 
 export const ROUTES = {

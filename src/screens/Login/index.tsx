@@ -1,18 +1,18 @@
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import AuthContext from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
+import AuthContext from '../../contexts/AuthContext';
 import { ActionTypes } from 'contexts/AuthContext/reducer';
 
 import './index.css';
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { dispatch } = useContext(AuthContext);
-  const lastPath = localStorage.getItem('lastPath') || '/';
   const handleLogin = () => {
-    dispatch({ type: ActionTypes.Login, payload: { name: 'Fernando' } });
-    history.replace(lastPath);
+    const lastPath = localStorage.getItem('lastPath') || '/';
+    dispatch({ type: ActionTypes.Login, payload: { name: 'Mica' } });
+    navigate(lastPath, { replace: true });
   };
 
   return (

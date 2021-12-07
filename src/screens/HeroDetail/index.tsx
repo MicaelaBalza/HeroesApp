@@ -1,21 +1,18 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { useMemo } from 'react';
-import { useParams, Redirect, useHistory } from 'react-router-dom';
+import { useNavigate, useParams, Navigate } from 'react-router-dom';
 
 import { getHeroById } from 'utils/heroes';
 
 import './index.css';
 
-interface HeroScreenParams {
-  heroId: string;
-}
-
 const HeroScreen = () => {
-  const history = useHistory();
-  const { heroId } = useParams<HeroScreenParams>();
-  const hero = useMemo(() => getHeroById(heroId), [heroId]);
+  const navigate = useNavigate();
+  const { id } = useParams<'id'>();
+  const hero = useMemo(() => getHeroById(id!), [id]);
   if (!hero) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   const { superhero, publisher, first_appearance, characters } = hero;
@@ -23,16 +20,16 @@ const HeroScreen = () => {
   const handleBack = () => {
     const pub = publisher.toLowerCase().split(' ')[0];
     if (history.length < 3) {
-      history.push(`/${pub}`);
-    } else {
-      history.goBack();
+      navigate(`/${pub}`);
     }
+    console.log(navigate);
+    navigate(-1);
   };
 
   return (
     <div className="hero-container">
       <img
-        src={require(`../../assets/img/heroes/${heroId}.jpg`).default}
+        src={require(`../../assets/img/heroes/${id}.jpg`).default}
         alt={superhero}
         className="hero-img animate__animated animate__slideInLeft"
       />
