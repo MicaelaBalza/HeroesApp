@@ -18,7 +18,7 @@ const SearchScreen = () => {
   const location = useLocation();
   const { q = ''} = queryString.parse(location.search);
   const [values, handleInputChange] = useForm<HeroFormData>({
-    hero: ''
+    hero: q as string
   });
   const { hero } = values;
   const heroesFiltered = useMemo(() => getHeroesByName(q as string), [q]);

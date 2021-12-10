@@ -1,25 +1,25 @@
 import { render, screen } from '@testing-library/react';
 
-import AuthContext from 'contexts/AuthContext';
 import HeroesApp from '.';
 
 describe('HeroesApp component', () => {
-  it('should render', async () => {
-    // localStorage.setItem('user', JSON.stringify({ user: { isLogged: true }}));
-    // render(
-    //   <HeroesApp />
-    // );
-    // expect(await screen.findByText('holahola')).toBeInTheDocument();
-    expect(true).toBe(true);
+  it('should render correctly with no logged user', () => {
+    const spy = jest.spyOn(window.localStorage.__proto__, 'setItem');
+    render(
+      <HeroesApp />
+    );
+
+    expect(localStorage.setItem).toHaveBeenLastCalledWith('user', '{"isLogged":false}');
+    expect(screen.getByRole('heading', { name: 'Login' })).toBeInTheDocument();
+    
+    spy.mockReset();
+    spy.mockRestore();
   });
 
-  // it('should something', () => {
-  //   localStorage.setItem('user', JSON.stringify({ user: { isLogged: true }}));
-  //   render(
-  //     <AuthContext.Provider value={{ user: { isLogged: true }}}>
-  //       <HeroesApp />
-  //     </AuthContext.Provider>
-  //   );
-  //   expect(screen.getByText('holahola')).toBeInTheDocument();
-  // })
-})
+  it('should render correctly with logged user', async () => {
+    window.localStorage.setItem('user', JSON.stringify({ name: 'Test', isLogged: true }));
+    render(<HeroesApp />);
+
+    expect(screen.getByRole('link', { name: 'Heroes App' })).toBeInTheDocument();
+  });
+});

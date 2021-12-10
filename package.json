@@ -18,6 +18,12 @@
     "test:coverage": "react-scripts test --env=jsdom --coverage --watchAll",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,6 +40,7 @@
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.33",

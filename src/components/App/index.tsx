@@ -18,6 +18,8 @@ const HeroesApp = function () {
     localStorage.setItem('user', JSON.stringify(user));
   }, [user]);
 
+  console.log(user);
+
   return (
     <div className="main-container">
       <AuthContext.Provider value={{ user, dispatch }}>
